@@ -7,7 +7,7 @@ function daysUntil(dateStr) {
   return Math.round((target - today) / (1000 * 60 * 60 * 24));
 }
 
-export default function SubjectCard({ subject, onDelete }) {
+export default function SubjectCard({ subject, onOpen, onDelete }) {
   const days = daysUntil(subject.exam_date);
   let urgency = "";
   if (days !== null) {
@@ -24,11 +24,14 @@ export default function SubjectCard({ subject, onDelete }) {
   }
 
   return (
-    <div className={`tab-card ${urgency}`}>
+    <div className={`tab-card ${urgency}`} onClick={onOpen} style={{ cursor: "pointer" }}>
       <button
         className="delete-x"
         aria-label={`${subject.name} löschen`}
-        onClick={() => onDelete(subject.id)}
+        onClick={(e) => {
+          e.stopPropagation();
+          onDelete(subject.id);
+        }}
       >
         ×
       </button>

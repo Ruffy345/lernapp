@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabaseClient";
 import SubjectCard from "../components/SubjectCard.jsx";
 import AddSubjectModal from "../components/AddSubjectModal.jsx";
+import SubjectDetail from "./SubjectDetail.jsx";
 
 export default function Dashboard({ session }) {
   const [subjects, setSubjects] = useState([]);
+  const [selectedSubject, setSelectedSubject] = useState(null);
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
 
@@ -41,7 +43,21 @@ export default function Dashboard({ session }) {
     if (!confirmed) return;
 
     const { error } = await supabase.from("subjects").delete().eq("id", id);
-    if (!error) setSubjects((prev) => prev.filter((s) => s.id !== id));
+    if (!error) {
+      setSubjects((prev) => prev.filter((s) => s.id !== id));
+      if (selectedSubject?.id === id) setSelectedSubject(null);
+    }
+  }
+
+  // Wenn ein Fach ausgewählt wurde, zeigen wir die Detailseite an:
+  if (selectedSubject) {
+    return (
+      <SubjectDetail
+        subject={selectedSubject}
+        session={session}
+        onBack={() => setSelectedSubject(null)}
+      />
+    );
   }
 
   return (
@@ -73,7 +89,12 @@ export default function Dashboard({ session }) {
         ) : (
           <div className="tabs">
             {subjects.map((subject) => (
-              <SubjectCard key={subject.id} subject={subject} onDelete={handleDelete} />
+              <SubjectCard
+                key={subject.id}
+                subject={subject}
+                onOpen={() => setSelectedSubject(subject)}
+                onDelete={handleDelete}
+              />
             ))}
           </div>
         )}
