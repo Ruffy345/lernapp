@@ -298,6 +298,166 @@ button {
   font-size: 14px;
 }
 
+/* ---------- Fach-Detail / Dokumente ---------- */
+
+.back-link {
+  background: none;
+  border: none;
+  color: #6b6555;
+  font-size: 13px;
+  padding: 0;
+  margin-bottom: 18px;
+}
+
+.back-link:hover {
+  color: var(--moss-dark);
+}
+
+.upload-btn {
+  display: inline-flex;
+  align-items: center;
+}
+
+.doc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--paper-line);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.doc-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #fff;
+  border-bottom: 1px solid var(--paper-line);
+}
+
+.doc-row:last-child {
+  border-bottom: none;
+}
+
+.doc-name {
+  flex: 1;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.doc-name:hover {
+  color: var(--moss-dark);
+  text-decoration: underline;
+}
+
+.doc-date {
+  font-size: 12px;
+  color: #9a927a;
+}
+
+.doc-row .delete-x {
+  position: static;
+}
+
+.explain-btn {
+  background: none;
+  border: 1px solid var(--moss);
+  color: var(--moss-dark);
+  padding: 6px 12px;
+  border-radius: 3px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.explain-btn:hover {
+  background: var(--moss);
+  color: #fff;
+}
+
+.explain-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.explain-panel {
+  margin-top: 24px;
+  border: 1px solid var(--paper-line);
+  border-left: 4px solid var(--moss);
+  border-radius: 3px;
+  padding: 18px 20px;
+  background: #fff;
+}
+
+.explain-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.explain-panel-header h3 {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  margin: 0;
+}
+
+.explain-text {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #2c2a20;
+  white-space: pre-wrap;
+}
+
+.doc-status {
+  font-size: 11px;
+  white-space: nowrap;
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+
+.doc-status-pending {
+  color: #9a7218;
+  background: #fbf1de;
+}
+
+.doc-status-done {
+  color: var(--moss-dark);
+  background: #eaf1ec;
+}
+
+.doc-status-error {
+  color: var(--danger);
+  background: #fbe9e2;
+}
+
+.text-btn {
+  background: none;
+  border: 1px solid var(--paper-line);
+  color: #4a4536;
+  padding: 6px 12px;
+  border-radius: 3px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.text-btn:hover {
+  border-color: var(--ink);
+}
+
+.text-editor {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d8d2bd;
+  border-radius: 3px;
+  font-size: 13px;
+  font-family: var(--font-sans);
+  background: var(--paper);
+  color: var(--ink);
+  resize: vertical;
+}
+
 /* ---------- Modal ---------- */
 
 .modal-backdrop {
