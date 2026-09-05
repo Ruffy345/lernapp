@@ -214,6 +214,14 @@ export default function SubjectDetail({ subject, session, onBack }) {
                   {status === "done" && "Text erkannt"}
                   {status === "error" && "Erkennung fehlgeschlagen"}
                 </span>
+                {status === "error" && (
+                  <button
+                    className="text-btn"
+                    onClick={() => alert(doc.extraction_error || "Unbekannter Fehler")}
+                  >
+                    Fehler ansehen
+                  </button>
+                )}
                 <button className="text-btn" onClick={() => openTextEditor(doc)}>
                   Text ansehen
                 </button>
