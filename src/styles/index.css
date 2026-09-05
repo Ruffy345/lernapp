@@ -318,6 +318,24 @@ button {
   align-items: center;
 }
 
+.topic-group {
+  margin-bottom: 22px;
+}
+
+.topic-heading {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  color: var(--ink);
+  margin: 0 0 8px;
+}
+
+.topic-heading-muted {
+  color: #9a927a;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-style: italic;
+}
+
 .doc-list {
   list-style: none;
   margin: 0;
@@ -456,6 +474,124 @@ button {
   background: var(--paper);
   color: var(--ink);
   resize: vertical;
+}
+
+.markdown-content {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #2c2a20;
+}
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3 {
+  font-family: var(--font-serif);
+  color: var(--ink);
+  margin: 18px 0 8px;
+}
+
+.markdown-content h1:first-child,
+.markdown-content h2:first-child,
+.markdown-content h3:first-child {
+  margin-top: 0;
+}
+
+.markdown-content p {
+  margin: 0 0 12px;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  margin: 0 0 12px;
+  padding-left: 22px;
+}
+
+.markdown-content li {
+  margin-bottom: 4px;
+}
+
+.markdown-content table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0 0 16px;
+  font-size: 13px;
+}
+
+.markdown-content th,
+.markdown-content td {
+  border: 1px solid var(--paper-line);
+  padding: 6px 10px;
+  text-align: left;
+}
+
+.markdown-content th {
+  background: #f2eee0;
+  font-weight: 600;
+}
+
+.markdown-content blockquote {
+  border-left: 3px solid var(--moss);
+  margin: 0 0 12px;
+  padding-left: 12px;
+  color: #5c5744;
+  font-style: italic;
+}
+
+.markdown-content code {
+  background: #f2eee0;
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.cite-link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--moss-dark);
+  font-size: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.cite-link:hover {
+  color: var(--ink);
+}
+
+.flashcard-progress {
+  font-size: 13px;
+  color: #9a927a;
+  margin: 0 0 12px;
+}
+
+.flashcard-face {
+  background: #fff;
+  border: 1px solid var(--paper-line);
+  border-radius: 4px;
+  padding: 32px 28px;
+  margin-bottom: 16px;
+  min-height: 160px;
+}
+
+.flashcard-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #9a927a;
+  margin: 0 0 6px;
+}
+
+.flashcard-text {
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--ink);
+  margin: 0 0 4px;
+}
+
+.flashcard-divider {
+  border: none;
+  border-top: 1px solid var(--paper-line);
+  margin: 20px 0;
 }
 
 /* ---------- Modal ---------- */
